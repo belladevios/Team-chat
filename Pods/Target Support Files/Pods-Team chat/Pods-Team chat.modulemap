@@ -1,0 +1,6 @@
+framework module Pods_Team_chat {
+  umbrella header "Pods-Team chat-umbrella.h"
+
+  export *
+  module * { export * }
+}
