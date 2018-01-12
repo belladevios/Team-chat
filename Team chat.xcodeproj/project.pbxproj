@@ -9,11 +9,12 @@
 /* Begin PBXBuildFile section */
 		45E7C6F64E26E1C197BFACB9 /* Pods_Team_chat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32917D0DA743C7E27E29B594 /* Pods_Team_chat.framework */; };
 		E64F07252009151F00D4FD7E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64F07242009151F00D4FD7E /* AppDelegate.swift */; };
-		E64F07272009151F00D4FD7E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64F07262009151F00D4FD7E /* ViewController.swift */; };
+		E64F07272009151F00D4FD7E /* WelcomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64F07262009151F00D4FD7E /* WelcomViewController.swift */; };
 		E64F072A2009151F00D4FD7E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E64F07282009151F00D4FD7E /* Main.storyboard */; };
 		E64F072C2009151F00D4FD7E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E64F072B2009151F00D4FD7E /* Assets.xcassets */; };
 		E64F072F2009151F00D4FD7E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E64F072D2009151F00D4FD7E /* LaunchScreen.storyboard */; };
 		E66E3E3120093F2900334B22 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E66E3E3020093F2800334B22 /* GoogleService-Info.plist */; };
+		E66E3E332009418800334B22 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E66E3E322009418800334B22 /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,12 +23,13 @@
 		E3FD6A95A68661A375FD9483 /* Pods-Team chat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Team chat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Team chat/Pods-Team chat.debug.xcconfig"; sourceTree = "<group>"; };
 		E64F07212009151F00D4FD7E /* Team chat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Team chat.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E64F07242009151F00D4FD7E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E64F07262009151F00D4FD7E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E64F07262009151F00D4FD7E /* WelcomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomViewController.swift; sourceTree = "<group>"; };
 		E64F07292009151F00D4FD7E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E64F072B2009151F00D4FD7E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E64F072E2009151F00D4FD7E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E64F07302009151F00D4FD7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E66E3E3020093F2800334B22 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E66E3E322009418800334B22 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 		E64F07182009151F00D4FD7E = {
 			isa = PBXGroup;
 			children = (
+				E66E3E322009418800334B22 /* Default-568h@2x.png */,
 				E64F07232009151F00D4FD7E /* Team chat */,
 				E64F07222009151F00D4FD7E /* Products */,
 				B1A1A6D136EA356643EEDEF0 /* Pods */,
@@ -84,6 +87,7 @@
 				E66E3E2520091CF200334B22 /* Views */,
 				E66E3E2620091D0B00334B22 /* Controller */,
 				E64F072B2009151F00D4FD7E /* Assets.xcassets */,
+				E64F07302009151F00D4FD7E /* Info.plist */,
 				E66E3E2420091CC600334B22 /* Supporting Files */,
 			);
 			path = "Team chat";
@@ -92,7 +96,6 @@
 		E66E3E2420091CC600334B22 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				E64F07302009151F00D4FD7E /* Info.plist */,
 				E66E3E3020093F2800334B22 /* GoogleService-Info.plist */,
 			);
 			path = "Supporting Files";
@@ -111,7 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				E64F07242009151F00D4FD7E /* AppDelegate.swift */,
-				E64F07262009151F00D4FD7E /* ViewController.swift */,
+				E64F07262009151F00D4FD7E /* WelcomViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -188,6 +191,7 @@
 				E64F072F2009151F00D4FD7E /* LaunchScreen.storyboard in Resources */,
 				E66E3E3120093F2900334B22 /* GoogleService-Info.plist in Resources */,
 				E64F072C2009151F00D4FD7E /* Assets.xcassets in Resources */,
+				E66E3E332009418800334B22 /* Default-568h@2x.png in Resources */,
 				E64F072A2009151F00D4FD7E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -263,7 +267,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E64F07272009151F00D4FD7E /* ViewController.swift in Sources */,
+				E64F07272009151F00D4FD7E /* WelcomViewController.swift in Sources */,
 				E64F07252009151F00D4FD7E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
