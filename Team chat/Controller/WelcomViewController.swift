@@ -15,6 +15,15 @@ class WelcomViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
     }
 
-
+    @IBAction func loginButtonPressed(_ sender: UIButton) {
+        
+        performSegue(withIdentifier: "goToLogin", sender: self)
+    }
+    
+    @IBAction func registerButtonPressed(_ sender: UIButton) {
+        
+        performSegue(withIdentifier: "goToRegister", sender: self)
+    }
+    
 }
 

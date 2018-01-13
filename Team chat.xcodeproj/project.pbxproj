@@ -15,6 +15,13 @@
 		E64F072F2009151F00D4FD7E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E64F072D2009151F00D4FD7E /* LaunchScreen.storyboard */; };
 		E66E3E3120093F2900334B22 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E66E3E3020093F2800334B22 /* GoogleService-Info.plist */; };
 		E66E3E332009418800334B22 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E66E3E322009418800334B22 /* Default-568h@2x.png */; };
+		E66E3E35200942D400334B22 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66E3E34200942D400334B22 /* ChatViewController.swift */; };
+		E66E3E37200942E300334B22 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66E3E36200942E300334B22 /* LoginViewController.swift */; };
+		E66E3E39200942F000334B22 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66E3E38200942F000334B22 /* RegisterViewController.swift */; };
+		E66E3E3B200950B100334B22 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66E3E3A200950B100334B22 /* Message.swift */; };
+		E66E3E3F2009515C00334B22 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66E3E3D2009515C00334B22 /* MessageCell.swift */; };
+		E66E3E402009515C00334B22 /* MessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E66E3E3E2009515C00334B22 /* MessageCell.xib */; };
+		E66E3E42200AB03F00334B22 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66E3E41200AB03F00334B22 /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +37,13 @@
 		E64F07302009151F00D4FD7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E66E3E3020093F2800334B22 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E66E3E322009418800334B22 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		E66E3E34200942D400334B22 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		E66E3E36200942E300334B22 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		E66E3E38200942F000334B22 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		E66E3E3A200950B100334B22 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		E66E3E3D2009515C00334B22 /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
+		E66E3E3E2009515C00334B22 /* MessageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageCell.xib; sourceTree = "<group>"; };
+		E66E3E41200AB03F00334B22 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +120,7 @@
 			children = (
 				E64F07282009151F00D4FD7E /* Main.storyboard */,
 				E64F072D2009151F00D4FD7E /* LaunchScreen.storyboard */,
+				E66E3E3C2009512800334B22 /* custum cell */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -115,6 +130,9 @@
 			children = (
 				E64F07242009151F00D4FD7E /* AppDelegate.swift */,
 				E64F07262009151F00D4FD7E /* WelcomViewController.swift */,
+				E66E3E34200942D400334B22 /* ChatViewController.swift */,
+				E66E3E36200942E300334B22 /* LoginViewController.swift */,
+				E66E3E38200942F000334B22 /* RegisterViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -122,8 +140,19 @@
 		E66E3E2720091D5300334B22 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E66E3E3A200950B100334B22 /* Message.swift */,
+				E66E3E41200AB03F00334B22 /* User.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		E66E3E3C2009512800334B22 /* custum cell */ = {
+			isa = PBXGroup;
+			children = (
+				E66E3E3D2009515C00334B22 /* MessageCell.swift */,
+				E66E3E3E2009515C00334B22 /* MessageCell.xib */,
+			);
+			path = "custum cell";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -189,6 +218,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E64F072F2009151F00D4FD7E /* LaunchScreen.storyboard in Resources */,
+				E66E3E402009515C00334B22 /* MessageCell.xib in Resources */,
 				E66E3E3120093F2900334B22 /* GoogleService-Info.plist in Resources */,
 				E64F072C2009151F00D4FD7E /* Assets.xcassets in Resources */,
 				E66E3E332009418800334B22 /* Default-568h@2x.png in Resources */,
@@ -267,8 +297,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E66E3E37200942E300334B22 /* LoginViewController.swift in Sources */,
+				E66E3E39200942F000334B22 /* RegisterViewController.swift in Sources */,
 				E64F07272009151F00D4FD7E /* WelcomViewController.swift in Sources */,
+				E66E3E3B200950B100334B22 /* Message.swift in Sources */,
+				E66E3E42200AB03F00334B22 /* User.swift in Sources */,
+				E66E3E35200942D400334B22 /* ChatViewController.swift in Sources */,
 				E64F07252009151F00D4FD7E /* AppDelegate.swift in Sources */,
+				E66E3E3F2009515C00334B22 /* MessageCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
