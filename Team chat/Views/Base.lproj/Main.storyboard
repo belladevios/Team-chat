@@ -237,7 +237,7 @@
                                 <rect key="frame" x="0.0" y="607" width="375" height="60"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="fbT-0J-47B">
-                                        <rect key="frame" x="10" y="5" width="355" height="50"/>
+                                        <rect key="frame" x="10" y="0.0" width="355" height="50"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="V0m-dd-edu" userLabel="Message Text Field">
                                                 <rect key="frame" x="0.0" y="0.0" width="275" height="50"/>
@@ -265,10 +265,10 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="fbT-0J-47B" firstAttribute="top" secondItem="19c-da-mYt" secondAttribute="top" id="Gu3-1j-LPt"/>
                                     <constraint firstItem="fbT-0J-47B" firstAttribute="leading" secondItem="19c-da-mYt" secondAttribute="leading" constant="10" id="MEy-bx-kzJ"/>
                                     <constraint firstAttribute="height" constant="60" id="Qz4-zV-bp4"/>
                                     <constraint firstAttribute="trailing" secondItem="fbT-0J-47B" secondAttribute="trailing" constant="10" id="eFb-nY-7Tw"/>
-                                    <constraint firstItem="fbT-0J-47B" firstAttribute="centerY" secondItem="19c-da-mYt" secondAttribute="centerY" id="fEK-8S-Bow"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="w9t-SJ-5zi" userLabel="Message Table View">

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate {
 
     @IBOutlet weak var messageTextField: UITextField!
     @IBOutlet weak var sendButton: UIButton!
@@ -24,22 +24,24 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
         print(currentUser?.email ?? "")
         
+        self.messageTextField.delegate = self
+        
         self.messageTableView.delegate = self
         self.messageTableView.dataSource =  self
         
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tableViewTapped))
+        self.messageTableView.addGestureRecognizer(tapGesture)
+        
         self.messageTableView.register(UINib(nibName:"MessageCell", bundle:nil), forCellReuseIdentifier: "messageCustumCell")
-       
-        self.messageTableView.rowHeight = UITableViewAutomaticDimension
-        self.messageTableView.estimatedRowHeight = 120.0
         
         self.messageTableView.separatorStyle = .none
+        
+        self.configureTableView()
     }
-    
 
     @IBAction func sendButtonPressed(_ sender: UIButton) {
     }
 
-    
     // MARK:- UITableViewDelegate
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "messageCustumCell", for: indexPath) as! MessageCell
@@ -54,5 +56,43 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
         return 3//self.messageArray.count
     }
     
+    // MARK:- TableViewTapped
     
+    @objc func tableViewTapped() {
+        self.messageTextField.endEditing(true)
+    }
+    
+    // MARK:- UITextFieldDelegate
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        UIView.animate(withDuration: 0.5) {
+            self.heightConstraint.constant = 308 // 258 (keyboard) + 50 (compose view)
+            self.view.layoutIfNeeded()
+        }
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        UIView.animate(withDuration: 0.5) {
+            self.heightConstraint.constant = 50
+            self.view.layoutIfNeeded()
+        }
+    }
+    
+    // MARK:- configureTableView
+    func configureTableView() {
+        self.messageTableView.rowHeight = UITableViewAutomaticDimension
+        self.messageTableView.estimatedRowHeight = 120.0
+    }
+    
+        // MARK:- retrieveMessages
+    func retrieveMessages() {
+        
+        
+    }
+    
+    func sendMessage() {
+        
+        
+        
+    }
 }
