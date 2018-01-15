@@ -9,7 +9,7 @@
 import Foundation
 
 class User  {
-    var name:String = ""
+    var name:String = "bella \(Int(arc4random_uniform(7)))"
     var email:String = ""
     var password:String = ""
 }
