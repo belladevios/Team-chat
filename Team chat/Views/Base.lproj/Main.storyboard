@@ -86,22 +86,28 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="nYV-q5-iN3">
-                                <rect key="frame" x="20" y="114" width="335" height="130"/>
+                                <rect key="frame" x="20" y="114" width="335" height="180"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1XA-04-evT">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Display name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oGf-71-3vx" userLabel="User Display name text field">
                                         <rect key="frame" x="0.0" y="0.0" width="335" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cdT-Gp-pcV">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1XA-04-evT">
                                         <rect key="frame" x="0.0" y="50" width="335" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cdT-Gp-pcV">
+                                        <rect key="frame" x="0.0" y="100" width="335" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kSz-Jb-tLK">
-                                        <rect key="frame" x="0.0" y="100" width="335" height="30"/>
+                                        <rect key="frame" x="0.0" y="150" width="335" height="30"/>
                                         <color key="backgroundColor" red="0.0" green="0.56031829119999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Register">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -112,7 +118,7 @@
                                     </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="130" id="fIb-Mu-rJz"/>
+                                    <constraint firstAttribute="height" constant="180" id="fIb-Mu-rJz"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -130,6 +136,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="xqD-Bp-9cS"/>
                     <connections>
+                        <outlet property="userDisplayNameTextField" destination="oGf-71-3vx" id="R95-FK-6Sl"/>
                         <outlet property="userEmailTextField" destination="1XA-04-evT" id="hOX-c5-CFW"/>
                         <outlet property="userPasswordTextField" destination="cdT-Gp-pcV" id="QnI-na-Mkz"/>
                         <segue destination="wcb-3Z-IfT" kind="presentation" identifier="goToChat" id="Lb8-Ey-58a"/>
@@ -309,6 +316,6 @@
         <image name="background1" width="1800" height="1192"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="jmZ-gH-6ZN"/>
+        <segue reference="Lb8-Ey-58a"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import ChameleonFramework
 
 class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate {
 
@@ -17,14 +18,11 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     @IBOutlet weak var heightConstraint: NSLayoutConstraint!
     
-    var currentUser:User?
     var messageArray:[Message] = [Message]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        print(currentUser?.email ?? "")
-        
         self.messageTextField.delegate = self
         
         self.messageTableView.delegate = self
@@ -54,10 +52,20 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "messageCustumCell", for: indexPath) as! MessageCell
         if indexPath.row < self.messageArray.count {
+            
             let message = self.messageArray[indexPath.row]
             cell.userNameLabel.text = message.sender?.name
             cell.userMessageLabel.text = message.messageBody
             
+            if message.sender?.email == Auth.auth().currentUser?.email {
+                // Message we sent
+                cell.avatarImageView.backgroundColor = UIColor.flatLime()
+                cell.cellBackgroundView.backgroundColor = UIColor.flatSkyBlue()
+            }
+            else {
+                cell.avatarImageView.backgroundColor = UIColor.flatWatermelon()
+                cell.cellBackgroundView.backgroundColor = UIColor.flatGray()
+            }
         }
         cell.avatarImageView.image = UIImage(named:"egg")
         
@@ -123,22 +131,28 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func sendMessage() {
         
-        let messagesDB = Database.database().reference().child("Messages")
+        let currentUser = Auth.auth().currentUser
         
-        let messageDictionary:[String: String] = ["sender":self.currentUser!.email, "messageBody": self.messageTextField.text!, "name":self.currentUser!.name]
-        
-        messagesDB.childByAutoId().setValue(messageDictionary) { (error, reference) in
-            if error != nil {
-                print(error!)
-            }
-            else {
-                print("Success ! to save message")
-                
-                self.messageTextField.isEnabled = true
-                self.sendButton.isEnabled = true
-                self.messageTextField.text = ""
+        if let email = currentUser?.email, let name = currentUser?.displayName, let textMessage = self.messageTextField.text {
+            let messagesDB = Database.database().reference().child("Messages")
+            
+            let messageDictionary:[String: String] = ["sender":email, "messageBody": textMessage , "name":name]
+            
+            messagesDB.childByAutoId().setValue(messageDictionary) { (error, reference) in
+                if error != nil {
+                    print(error!)
+                }
+                else {
+                    print("Success ! to save message")
+                    
+                    self.messageTextField.isEnabled = true
+                    self.sendButton.isEnabled = true
+                    self.messageTextField.text = ""
+                }
             }
         }
         
     }
+    
+    
 }

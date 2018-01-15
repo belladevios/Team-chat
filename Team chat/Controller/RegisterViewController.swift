@@ -12,10 +12,10 @@ import SVProgressHUD
 
 class RegisterViewController: UIViewController {
 
+    @IBOutlet weak var userDisplayNameTextField: UITextField!
     @IBOutlet weak var userEmailTextField: UITextField!
     @IBOutlet weak var userPasswordTextField: UITextField!
     
-    var user:User?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,13 +45,13 @@ class RegisterViewController: UIViewController {
                 }
                 else {
                     // Success
-                    self.user = User()
-                    self.user?.email = email
-                    self.user?.password = password
                     
-                    self.userEmailTextField.text = ""
-                    self.userPasswordTextField.text = ""
-                    
+                    let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
+                    changeRequest?.displayName = self.userDisplayNameTextField.text
+                    changeRequest?.commitChanges { (error) in
+                        // ...
+//                        print("\n---- \(error)---- \n")
+                    }
                     self.performSegue(withIdentifier: "goToChat", sender: self)
                 }
             })
@@ -63,14 +63,14 @@ class RegisterViewController: UIViewController {
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        if segue.identifier == "goToChat"  {
-            let destinationViewController = segue.destination as! ChatViewController
-            destinationViewController.currentUser = self.user
-        }
-        
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//
+//        if segue.identifier == "goToChat"  {
+//            let destinationViewController = segue.destination as! ChatViewController
+//            destinationViewController.currentUser = self.user
+//        }
+//
+//    }
     
 
 }

@@ -69,6 +69,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="avatarImageView" destination="l7Y-jd-wZF" id="VXF-2P-htC"/>
+                <outlet property="cellBackgroundView" destination="4nX-dY-8tU" id="ZQs-dP-Tul"/>
                 <outlet property="userMessageLabel" destination="34b-GW-aca" id="OlU-tz-L1G"/>
                 <outlet property="userNameLabel" destination="gs5-PU-gnz" id="2lW-Pb-JwE"/>
             </connections>
